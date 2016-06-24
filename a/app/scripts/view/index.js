@@ -45,9 +45,14 @@ var BlogPostInputForm = Backbone.View.extend({
       'title': $('#new-post-title').val(), //'title' has to match the <input> "name" in my template.
       'blog': $('#new-post-entry').val()   //'blog' has to match the <input> "name" in my template.
     });
+    /*
+     * this looks redundant, but it is needed to get blog post 'content' to post
+     * to server. Not sure why.  Also, it is needed to get last user post to clear
+     * out from input form.
+     */
     this.collection.create({
-      'title': $('#new-post-title').val(''), //'title' has to match the <input> "name" in my template.
-      'blog': $('#new-post-entry').val('')   //'blog' has to match the <input> "name" in my template.
+      'title': $('#new-post-title').val(''),
+      'blog': $('#new-post-entry').val('')
     });
   }
 });
