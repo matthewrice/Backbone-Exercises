@@ -15,3 +15,56 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+
+#header{
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Cormorant Unicase', serif;
+}
+
+.blog-form{
+  margin-top: 50px;
+  border: 1px solid rgb(151,162,164);
+  width: 350px;
+  background-color: rgb(164,168,168);
+}
+
+.blog-title-label{
+  display: block;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 20px;
+}
+
+.blog-title{
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 303px;
+  border-radius: 5px;
+  border: 1px solid rgb(151,162,164);
+  font-family: 'Cormorant Unicase', serif;
+  padding: 4px;
+}
+
+.blog-entry-label{
+  display: block;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 20px;
+}
+
+.blog-entry{
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 18px;
+  border-radius: 5px;
+  font-family: 'Cormorant Unicase', serif;
+  border: 1px solid rgb(151,162,164);
+  padding: 4px;
+}
+
+.form-button{
+  margin-left: 110px;
+  width: 90px;
+  background-color: rgb(34,96,245);
+  color: white;
+}
