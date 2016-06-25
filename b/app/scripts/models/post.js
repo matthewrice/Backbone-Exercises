@@ -18,7 +18,11 @@ var PersonModel = Backbone.Model.extend({
 
 // the following constructor function is the Collection of Models for this application.
 var PersonCollection = Backbone.Collection.extend({
-  model: 'PersonModel',
+  /*
+   * make sure the PersonModel is not written as a string.  If it is, your form
+   * will not work at all (post to the server or clear out).
+   */
+  model: PersonModel,
   // the url below is the server that all user inputs will post to.  The end path is "mattspersoncreator".
   url: 'https://tiny-lasagna-server.herokuapp.com/collections/mattspersoncreator/'
 });
