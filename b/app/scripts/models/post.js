@@ -19,8 +19,8 @@ var PersonModel = Backbone.Model.extend({
 // the following constructor function is the Collection of Models for this application.
 var PersonCollection = Backbone.Collection.extend({
   /*
-   * make sure the PersonModel is not written as a string.  If it is, your form
-   * will not work at all (post to the server or clear out).
+   * make sure the model constructor (PersonModel) below is not written as a string.
+   * If it is, your form will not work at all...it will not post to the server or clear out).
    */
   model: PersonModel,
   // the url below is the server that all user inputs will post to.  The end path is "mattspersoncreator".

@@ -53,6 +53,11 @@ var FormView = Backbone.View.extend({
         'address': $('#address').val(),
         'phoneNumber': $('#phoneNumber').val()
      });
+     /*
+      * in Dan's notes (6.4-contacts), he didn't reiterate "this.collection.create"
+      * like I have below.  I have tried to run my program without the reiteration
+      * but it doesn't work without.  I need to figure out why.
+      */
      this.collection.create({
        'firstName': $('#firstName').val(''),
        'lastName': $('#lastName').val(''),
