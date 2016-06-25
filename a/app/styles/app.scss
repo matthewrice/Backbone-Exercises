@@ -24,7 +24,6 @@ img {
 
 .blog-form{
   margin-top: 50px;
-  border: 1px solid rgb(151,162,164);
   width: 350px;
   background-color: rgb(164,168,168);
 }
@@ -41,7 +40,6 @@ img {
   margin-bottom: 5px;
   width: 303px;
   border-radius: 5px;
-  border: 1px solid rgb(151,162,164);
   font-family: 'Cormorant Unicase', serif;
   padding: 4px;
 }
@@ -58,13 +56,17 @@ img {
   margin-bottom: 18px;
   border-radius: 5px;
   font-family: 'Cormorant Unicase', serif;
-  border: 1px solid rgb(151,162,164);
   padding: 4px;
 }
 
 .form-button{
   margin-left: 110px;
   width: 90px;
-  background-color: rgb(34,96,245);
+  background-color: rgb(107,165,185);
   color: white;
+}
+
+.form-button:hover{
+  color: rgb(107,165,185);
+  background-color: white;
 }

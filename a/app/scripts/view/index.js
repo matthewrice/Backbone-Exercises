@@ -1,8 +1,14 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var model = require('../models/post');
+/*
+ * If you don't require blogEntryTemplate in, you will get an error in the console
+ * that says, "blogEntryTemplate is not defined.
+ * blogEntryTemplate is both the name of the template in my BlogPostInputForm and
+ * the name of the variable in the main index.js file.
+ */
 var blogEntryTemplate = require('../../templates/index.hbs');
-console.log('model: ', model);
+// console.log('model: ', model);
 
 
 //this View inserts a header in my webpage.
@@ -20,7 +26,7 @@ var BlogPostHeadingView = Backbone.View.extend({
     return this;
   }
 });
-console.log('BlogPostHeadingView: ', BlogPostHeadingView);
+// console.log('BlogPostHeadingView: ', BlogPostHeadingView);
 
 
 //this View contains my blog's entry form.  this is being achieved through a template.
@@ -28,9 +34,13 @@ var BlogPostInputForm = Backbone.View.extend({
   //no tagName is needed here because the "form" comes with built-in elements.
   tagName: 'form',
   className: 'blog-entry-form col-md-5',
+  /*
+   * I'm not sure how important this is, but the template name below is the variable
+   * name used to render the template from my main index.js file.
+   */
   template: blogEntryTemplate,
   events: {
-    'submit': 'addBlogEntry'  //.  'addBlogEntry' is my event handler function below.
+    'submit': 'addBlogEntry'  // 'addBlogEntry' is my event handler function below.
   },
   //the render function inserts my blog entry-form template into my html form.
   render: function(){
@@ -56,7 +66,7 @@ var BlogPostInputForm = Backbone.View.extend({
     });
   }
 });
-console.log('BlogPostInputForm: ', BlogPostInputForm);
+// console.log('BlogPostInputForm: ', BlogPostInputForm);
 
 
 //this View creates the "li"s contained in my "ul". It creates each individual blog entry.
