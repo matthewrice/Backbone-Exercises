@@ -7,7 +7,7 @@ var Backbone = require('backbone');
 
 // the following constructor function is the Model for this application.
 var PersonModel = Backbone.Model.extend({
-  idAttribute: '_id'
+  idAttribute: "_id"
 });
 /*
  * the following console.log won't render in my console until I require in the
@@ -17,12 +17,12 @@ var PersonModel = Backbone.Model.extend({
 
 
 // the following constructor function is the Collection of Models for this application.
-var PersonCollection = Backbone.Model.extend({
+var PersonCollection = Backbone.Collection.extend({
   model: 'PersonModel',
   // the url below is the server that all user inputs will post to.  The end path is "mattspersoncreator".
   url: 'https://tiny-lasagna-server.herokuapp.com/collections/mattspersoncreator/'
 });
-// console.log('PersonCollection: ', PersonCollection);
+console.log('PersonCollection: ', PersonCollection);
 
 
 module.exports = {

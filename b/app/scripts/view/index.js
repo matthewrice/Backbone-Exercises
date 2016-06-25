@@ -42,13 +42,12 @@ var FormView = Backbone.View.extend({
    },
    addNewPerson: function(event){
      event.preventDefault();
-     this.collection.create({  /*
-                                * the collection method is the argument that will
-                                * be passed to the peopleGeneratorTemplate function
-                                * in your main index.js file.  That function will
-                                * render this View to the DOM and run the event
-                                * that generates new people.
-                                */
+     /*
+      * the collection method is the argument that will be passed to the
+      * peopleGeneratorTemplate function in your main index.js file. That function
+      * will render this View to the DOM and run the event that generates new people.
+      */
+     this.collection.create({
         'firstName': $('#firstName').val(),
         'lastName': $('#lastName').val(),
         'address': $('#address').val(),

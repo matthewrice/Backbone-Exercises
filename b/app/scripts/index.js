@@ -22,7 +22,7 @@ var personCollection = new PersonCollection();
  * in the <h1> tag to the DOM.
  */
 var header = new view.HeaderView();
-console.log(header);
+// console.log(header);
 $('.app').append(header.render().el);
 
 /*
@@ -31,4 +31,4 @@ $('.app').append(header.render().el);
  */
 var peopleGeneratorTemplate = new view.FormView({'collection': personCollection});
   $('.app').append(peopleGeneratorTemplate.render().el);
-console.log(peopleGeneratorTemplate);
+// console.log(peopleGeneratorTemplate);
