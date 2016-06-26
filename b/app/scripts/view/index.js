@@ -53,17 +53,18 @@ var FormView = Backbone.View.extend({
         'address': $('#address').val(),
         'phoneNumber': $('#phoneNumber').val()
      });
-     /*
-      * in Dan's notes (6.4-contacts), he didn't reiterate "this.collection.create"
-      * like I have below.  I have tried to run my program without the reiteration
-      * but it doesn't work without.  I need to figure out why.
-      */
-     this.collection.create({
-       'firstName': $('#firstName').val(''),
-       'lastName': $('#lastName').val(''),
-       'address': $('#address').val(''),
-       'phoneNumber': $('#phoneNumber').val('')
-     });
+    /*
+     * I created the duplicate 'this.collection.create' in order to clear out my
+     * form after the user clicks 'submit' on my form.  It does clear out the form,
+     * but it submits extra content to the server that gets returned as empty objects.
+     */
+     
+    //  this.collection.create({
+    //    'firstName': $('#firstName').val(''),
+    //    'lastName': $('#lastName').val(''),
+    //    'address': $('#address').val(''),
+    //    'phoneNumber': $('#phoneNumber').val('')
+    //  });
    }
 });
 

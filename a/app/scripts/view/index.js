@@ -56,14 +56,15 @@ var BlogPostInputForm = Backbone.View.extend({
       'blog': $('#new-post-entry').val()   //'blog' has to match the <input> "name" in my template.
     });
     /*
-     * this looks redundant, but it is needed to get blog post 'content' to post
-     * to server. Not sure why.  Also, it is needed to get last user post to clear
-     * out from input form.
+     * I created the duplicate 'this.collection.create' in order to clear out my
+     * form after the user clicks 'submit' on my form.  It does clear out the form,
+     * but it submits extra content to the server that gets returned as empty objects.
      */
-    this.collection.create({
-      'title': $('#new-post-title').val(''),
-      'blog': $('#new-post-entry').val('')
-    });
+     
+    // this.collection.create({
+    //   'title': $('#new-post-title').val(''),
+    //   'blog': $('#new-post-entry').val('')
+    // });
   }
 });
 // console.log('BlogPostInputForm: ', BlogPostInputForm);

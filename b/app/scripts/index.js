@@ -29,6 +29,6 @@ $('.app').append(header.render().el);
  * the following View is a new instance of FormView.  It renders the content
  * in the <form> tag to the DOM.
  */
-var peopleGeneratorTemplate = new view.FormView({'collection': personCollection});
+var peopleGeneratorTemplate = new view.FormView({collection: personCollection});
   $('.app').append(peopleGeneratorTemplate.render().el);
 // console.log(peopleGeneratorTemplate);
