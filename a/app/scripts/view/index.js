@@ -52,19 +52,29 @@ var BlogPostInputForm = Backbone.View.extend({
     //the event.preventDefault prevents the default function of the event listener.
     event.preventDefault();
     this.collection.create({
-      'title': $('#new-post-title').val(), //'title' has to match the <input> "name" in my template.
-      'blog': $('#new-post-entry').val()   //'blog' has to match the <input> "name" in my template.
+      'title': $('#newPostTitle').val(), //'title' has to match the <input> "name" in my template.
+      'blog': $('#newPostEntry').val()   //'blog' has to match the <input> "name" in my template.
     });
     /*
      * I created the duplicate 'this.collection.create' in order to clear out my
      * form after the user clicks 'submit' on my form.  It does clear out the form,
      * but it submits extra content to the server that gets returned as empty objects.
      */
-     
+
     // this.collection.create({
     //   'title': $('#new-post-title').val(''),
     //   'blog': $('#new-post-entry').val('')
     // });
+
+    /*
+     * Got help from Andy.  My form clears now after the user sumbits a post.
+     * Only the content submitted gets posted to the server.  No extra content.
+     */
+    this.clearBlogPost();
+  },
+  clearBlogPost: function(){
+    $('#newPostTitle').val('');
+    $('#newPostEntry').val('');
   }
 });
 // console.log('BlogPostInputForm: ', BlogPostInputForm);

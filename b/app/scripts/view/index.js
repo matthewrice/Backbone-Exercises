@@ -32,40 +32,53 @@ var FormView = Backbone.View.extend({
    * use the template name "peopleGeneratorTemplate" as your variable name when
    * you render the template from your main index.js file.
    */
-   template: peopleGeneratorTemplate,
-   events: {
-     'submit': 'addNewPerson' // 'addBlogEntry' is my event handler function below.
-   },
-   render: function(){
-     this.$el.append(this.template());
-     return this;
-   },
-   addNewPerson: function(event){
-     event.preventDefault();
+  template: peopleGeneratorTemplate,
+  events: {
+    'submit': 'addNewPerson' // 'addBlogEntry' is my event handler function below.
+  },
+  render: function(){
+    this.$el.append(this.template());
+    return this;
+  },
+  addNewPerson: function(event){
+    event.preventDefault();
      /*
       * the collection method is the argument that will be passed to the
       * peopleGeneratorTemplate function in your main index.js file. That function
       * will render this View to the DOM and run the event that generates new people.
       */
-     this.collection.create({
-        'firstName': $('#firstName').val(),
-        'lastName': $('#lastName').val(),
-        'address': $('#address').val(),
-        'phoneNumber': $('#phoneNumber').val()
-     });
+    this.collection.create({
+      'firstName': $('#firstName').val(),
+      'lastName': $('#lastName').val(),
+      'address': $('#address').val(),
+      'phoneNumber': $('#phoneNumber').val()
+    });
     /*
      * I created the duplicate 'this.collection.create' in order to clear out my
      * form after the user clicks 'submit' on my form.  It does clear out the form,
      * but it submits extra content to the server that gets returned as empty objects.
      */
-     
+
     //  this.collection.create({
     //    'firstName': $('#firstName').val(''),
     //    'lastName': $('#lastName').val(''),
     //    'address': $('#address').val(''),
     //    'phoneNumber': $('#phoneNumber').val('')
     //  });
-   }
+
+    /*
+     * Got help from Andy.  My form clears now after the user sumbits a post.
+     * Only the content submitted gets posted to the server.  No extra content.
+     */
+    this.clearPerson();
+  },
+  clearPerson: function(){
+    $('#firstName').val('');
+    $('#firstName').val('');
+    $('#lastName').val('');
+    $('#address').val('');
+    $('#phoneNumber').val('');
+  }
 });
 
 module.exports = {

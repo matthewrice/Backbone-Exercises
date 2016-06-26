@@ -26,7 +26,7 @@ console.log('ExplanationView: ', ExplanationView);
 // 'BlogListView' is the 'ul' that all the blog entries will be appended to.
 var BlogListView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'blog-list well col-md-2',
+  className: 'blog-list well col-md-4',
   /*
    * initialize is a noop that doesn't do anything until I add some programming
    * to it.  In this case, I am using it to create an event listener.

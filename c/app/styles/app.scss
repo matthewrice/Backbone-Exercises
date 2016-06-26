@@ -19,7 +19,7 @@ img {
 .header{
   text-align: center;
   margin-top: 50px;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Orbitron', sans-serif;
   font-size: 40px;
   color: black;
 }
@@ -27,19 +27,21 @@ img {
 .explanation{
   display: block;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
-  font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+  color: black;
+  font-size: 15px;
   margin-top: 15px;
   color: grey;
 }
 
 .blog-list{
   list-style: none;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Orbitron', sans-serif;
+  color: black;
   margin-top: 50px;
   font-size: 20px;
 }
 
 .individual-blog-entry{
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
