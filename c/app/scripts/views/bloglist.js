@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 var model = require('../models/post');
 var blog = require('../../templates/blog.hbs');
+var individualblogentry = require('../../templates/individualblogentry.hbs');
 
 var HeaderView = Backbone.View.extend({
   tagName: 'h1',
@@ -65,38 +66,53 @@ var IndividualBlogView = Backbone.View.extend({
   className: 'individual-blog-entry',
   //the template name, "blog", is the variable name I used to require in my handlebar template.
   template: blog,
-  events: {
-    // deleteContact is the function below
-    'click .delete-button': 'deleteBlog',
-    'click .edit-button': 'edit'
-  },
-  initialize: function(){
-    /*
-     * I am using another 'listenTo' event listener. As before, it takes 3 arguments.
-     * Other (this.model) - find the model (blog entry) attached to the 'li'.
-     * Event ('destroy') - delete the blog entry from server.
-     * Callback function (this.removeBlog) - remove the blog entry from the DOM.
-     */
-    this.listenTo(this.model, 'destroy', this.removeBlog);
-  },
+  // events: {
+  //   // deleteContact is the function below
+  //   'click .delete-button': 'deleteBlog',
+  //   'click .edit-button': 'edit'
+  // },
+  // initialize: function(){
+  //   /*
+  //    * I am using another 'listenTo' event listener. As before, it takes 3 arguments.
+  //    * Other (this.model) - find the model (blog entry) attached to the 'li'.
+  //    * Event ('destroy') - delete the blog entry from server.
+  //    * Callback function (this.removeBlog) - remove the blog entry from the DOM.
+  //    */
+  //   this.listenTo(this.model, 'destroy', this.removeBlog);
+  // },
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
     return this;
   },
-  deleteBlog: function(){
-    // destroy will delete a blog entry from the server.
-    this.model.destroy();
-  },
-  removeBlog: function(){
-    // remove deletes a blog entry from the DOM.
-    this.$el.remove();
-  }
+  // deleteBlog: function(){
+  //   // destroy will delete a blog entry from the server.
+  //   this.model.destroy();
+  // },
+  // removeBlog: function(){
+  //   // remove deletes a blog entry from the DOM.
+  //   this.$el.remove();
+  // }
 });
+
+
+/* the following View renders a blog post to the DOM when the user clicks on the
+ * blog title.
+ */
+ var BlogDetailView = Backbone.View.extend({
+   tagName: 'p',
+   className: 'blog-detail well col-md-offset-1 col-md-7',
+   template: individualblogentry,
+   render: function(){
+     this.$el.html(this.template(this.model.toJSON()));
+     return this;
+   }
+ });
 
 
 module.exports = {
   'HeaderView': HeaderView,
   'ExplanationView': ExplanationView,
   'BlogListView': BlogListView,
-  'IndividualBlogView': IndividualBlogView
+  'IndividualBlogView': IndividualBlogView,
+  'BlogDetailView': BlogDetailView
 };
