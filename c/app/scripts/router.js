@@ -11,8 +11,7 @@ var Router = Backbone.Router.extend({
   },
   initialize: function(){
     this.collection = new PostCollection();
-  },
-  index: function(){
+
     var header = new view.HeaderView();
     $('.app').append(header.render().el);
 
@@ -21,14 +20,19 @@ var Router = Backbone.Router.extend({
 
     var blogList = new view.BlogListView({collection: this.collection});
     $('.app').append(blogList.render().el);
+  },
+  index: function(){
+
 
     this.collection.fetch();
   },
   detail: function(blogId){
-    // this.collection.fetch().done(function(){
-    var blog = this.collection.get(blogId);
-    var blogDetail = new view.BlogDetailView({model: blog});
-    $('.post-blog').html(blogDetail.render().el);
+    var self = this;
+    this.collection.fetch().done(function(){
+      var blog = self.collection.get(blogId);
+      var blogDetail = new view.BlogDetailView({model: blog});
+      $('.post-blog').html(blogDetail.render().el);
+    });
   }
 });
 
